@@ -1,9 +1,11 @@
+import { Textfit } from "react-textfit";
+
 type WhatDO = {
     value: string | number
 }
 
 export default function (props: WhatDO) {
     return (
-        <div className='display'> {props.value} </div>
+        <Textfit mode="single" max={70}> {props.value} </Textfit>
     );
 }

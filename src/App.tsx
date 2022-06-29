@@ -1,11 +1,12 @@
-import { Container } from 'react-bootstrap'
 import Calculator from './Components/Calculator'
+import { GlobalStyle } from './styles/styles'
 
 function App() {
   return (
-    <Container>
-      <Calculator/>
-    </Container>
+    <div>
+      <GlobalStyle/>
+      <Calculator />
+    </div>
   )
 }
 

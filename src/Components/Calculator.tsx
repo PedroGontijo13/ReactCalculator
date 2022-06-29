@@ -1,5 +1,6 @@
 import { useState } from "react"
-import Button from "./Button"
+import { Screen, Wrapper } from "../styles/styles"
+import ButtonP from "./Button"
 import Display from "./Display"
 
 export default function Calculator() {
@@ -14,14 +15,7 @@ export default function Calculator() {
     //using hook to help to do the operation 1 time
     const [index, setIndex] = useState(0)
 
-    function isFloat(n: number | string) {
-        return n === +n && n !== (n | 0);
-    }
-
     function _add(label: string) {
-        //Verify if have just one dot "."
-        if (label === '.' && isFloat(valueDisplay)) return
-
         //Remove the zero on left and check the variable clearDisplay
         const check_clearDisplay = valueDisplay === '0' || clearDisplay
         const nowValue = check_clearDisplay ? '' : valueDisplay
@@ -75,26 +69,29 @@ export default function Calculator() {
     }
 
     return (
-        <div className='calculadora'>
-            <Display value={valueDisplay}></Display>
-
-            <Button label='AC' function={_clear} span='span-3'></Button>
-            <Button label='/' function={_operation} operation></Button>
-            <Button label='7' function={_add} ></Button>
-            <Button label='8' function={_add} ></Button>
-            <Button label='9' function={_add} ></Button>
-            <Button label='*' function={_operation} operation></Button>
-            <Button label='4' function={_add} ></Button>
-            <Button label='5' function={_add} ></Button>
-            <Button label='6' function={_add} ></Button>
-            <Button label='-' function={_operation} operation></Button>
-            <Button label='1' function={_add} ></Button>
-            <Button label='2' function={_add} ></Button>
-            <Button label='3' function={_add} ></Button>
-            <Button label='+' function={_operation} operation></Button>
-            <Button label='0' function={_add} span='span-2'></Button>
-            <Button label='.' function={_add} ></Button>
-            <Button label='=' function={_operation} operation></Button>
+        <div>
+            <Screen>
+                <Display value={valueDisplay}></Display>
+            </Screen>
+            <Wrapper>
+                <ButtonP label='/' function={_operation} operation></ButtonP>
+                <ButtonP label='+' function={_operation} operation></ButtonP>
+                <ButtonP label='*' function={_operation} operation></ButtonP>
+                <ButtonP label='-' function={_operation} operation></ButtonP>
+                <ButtonP label='7' function={_add} ></ButtonP>
+                <ButtonP label='8' function={_add} ></ButtonP>
+                <ButtonP label='9' function={_add} ></ButtonP>
+                <ButtonP label='4' function={_add} ></ButtonP>
+                <ButtonP label='5' function={_add} ></ButtonP>
+                <ButtonP label='6' function={_add} ></ButtonP>
+                <ButtonP label='1' function={_add} ></ButtonP>
+                <ButtonP label='2' function={_add} ></ButtonP>
+                <ButtonP label='3' function={_add} ></ButtonP>
+                <ButtonP label='0' function={_add}></ButtonP>
+                <ButtonP label='.' function={_add} ></ButtonP>
+                <ButtonP label='=' function={_operation} operation></ButtonP>
+                <ButtonP label='AC' function={_clear}></ButtonP>
+            </Wrapper>
         </div>
     )
 }

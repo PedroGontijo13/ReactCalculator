@@ -1,15 +1,16 @@
-type WhatDO = {
-    label: string, function: any, span ?: string, operation ?: any
-}
+import { ACButton } from "../styles/styles"
+import { NewType } from "./NewType"
 
-export default function (props: WhatDO) {
+type WhatDO = NewType
+
+export default function ButtonP(props: WhatDO) {
     let classes = 'button'
     classes += props.span ? props.span : ''
     classes += props.operation ? 'op' : ''
 
     return (
-        <button className={classes} onClick={() => props.function(props.label)}>
+        <ACButton className={classes} onClick={() => props.function(props.label)}>
             {props.label}
-        </button>
+        </ACButton>
     )
 }
