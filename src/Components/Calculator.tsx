@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Screen, Wrapper } from "../styles/styles"
+import { AcArea, Screen, Wrapper } from "../styles/styles"
 import ButtonP from "./Button"
 import Display from "./Display"
 
@@ -90,8 +90,10 @@ export default function Calculator() {
                 <ButtonP label='0' function={_add}></ButtonP>
                 <ButtonP label='.' function={_add} ></ButtonP>
                 <ButtonP label='=' function={_operation} operation></ButtonP>
-                <ButtonP label='AC' function={_clear}></ButtonP>
             </Wrapper>
+            <AcArea>
+                <ButtonP label='AC' function={_clear}></ButtonP>
+            </AcArea>
         </div>
     )
 }

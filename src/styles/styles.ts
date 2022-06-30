@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import ButtonP from "../Components/Button";
 
 export const Wrapper = styled.div`
   height: 320px;
@@ -24,6 +23,22 @@ export const Screen = styled.div`
   color: white;
   font-weight: bold;
   box-sizing: border-box;
+`;
+
+export const AcArea = styled.div`
+  height: 80px;
+  width: 235px;
+  border-radius: 5px;
+  display: grid;
+
+  button {
+    background-color: #4357692d;
+    border-style: none;
+
+    &:hover {
+      background-color: #4357;
+    }
+  }
 `;
 
 export const ACButton = styled.button`
